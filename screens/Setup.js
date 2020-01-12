@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground } from 'react-native';
 
-import bg from './assets/bg2.png';
+import bg from '../assets/bg2.png';
 
 class Setup extends Component {
 	constructor(props) {
