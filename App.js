@@ -30,7 +30,7 @@ const Rootstack = createStackNavigator(
 		}
 	},
 	{
-		initialRouteName: 'PROFILE'
+		initialRouteName: 'SETUP'
 	}
 );
 
