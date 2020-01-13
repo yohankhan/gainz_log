@@ -13,19 +13,19 @@ const Rootstack = createStackNavigator(
 		PROFILE: {
 			screen: Profile,
 			navigationOptions: {
-				header: null
+				headerShown: false
 			}
 		},
 		SETUP: {
 			screen: Setup,
 			navigationOptions: {
-				header: null
+				headerShown: false
 			}
 		},
 		MAIN: {
 			screen: Main,
 			navigationOptions: {
-				header: null
+				headerShow: false
 			}
 		}
 	},
