@@ -132,7 +132,7 @@ class Setup extends Component {
 
 	leg_raise = () => {
 		this.f('LEG RAISE');
-		this._menu2.hide();
+		// this._menu2.hide();
 	};
 
 	leg_legpress = () => {
@@ -142,22 +142,22 @@ class Setup extends Component {
 
 	shoulder_press = () => {
 		this.f('SHOULDER PRESS');
-		this._menu2.hide();
+		// this._menu2.hide();
 	};
 
 	chest_bench = () => {
 		this.f('BENCH_PRESS');
-		this._menu2.hide();
+		// this._menu2.hide();
 	};
 
 	chest_fly = () => {
 		this.f('CHEST FLY');
-		this._menu2.hide();
+		// this._menu2.hide();
 	};
 
 	shoulder_raise = () => {
 		this.f('SHOULDER RAISE');
-		this._menu2.hide();
+		// this._menu2.hide();
 	};
 
 	f = (data) => {
@@ -263,17 +263,21 @@ class Setup extends Component {
 									</TouchableOpacity>
 								}
 							>
-								<MenuItem underlayColor="red" onPress={this.leg_squat}>Squat</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.leg_legpress}>Leg Press</MenuItem>
-								<MenuItem onPress={this.leg_raise}>Leg Raise</MenuItem>
-								<MenuItem onPress={this.chest_bench}>Bench Press</MenuItem>
-								<MenuItem onPress={this.chest_fly}>Chest Fly</MenuItem>
-								<MenuItem onPress={this.tri_push}>Tricep Pushdown</MenuItem>
-								<MenuItem onPress={this.back_deadlift}>Deadlift</MenuItem>
-								<MenuItem onPress={this.back_barpull}>Lat_Bar_Pull</MenuItem>
-								<MenuItem onPress={this.bicep_curl}>Bicep_Curls</MenuItem>
-								<MenuItem onPress={this.shoulder_press}>Shoulder_Press</MenuItem>
-								<MenuItem onPress={this.shoulder_raise}>Shoulder_Raise</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.leg_squat}>
+									Squat
+								</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.leg_legpress}>
+									Leg Press
+								</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.leg_raise}>Leg Raise</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.chest_bench}>Bench Press</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.chest_fly}>Chest Fly</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.tri_push}>Tricep Pushdown</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.back_deadlift}>Deadlift</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.back_barpull}>Lat_Bar_Pull</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.bicep_curl}>Bicep_Curls</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.shoulder_press}>Shoulder_Press</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.shoulder_raise}>Shoulder_Raise</MenuItem>
 							</Menu>
 						</View>
 					</View>
