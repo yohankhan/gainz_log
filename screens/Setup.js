@@ -127,7 +127,7 @@ class Setup extends Component {
 	leg_squat = () => {
 		this.f('SQUAT');
 
-		this._menu2.hide();
+		// this._menu2.hide();
 	};
 
 	leg_raise = () => {
@@ -137,7 +137,7 @@ class Setup extends Component {
 
 	leg_legpress = () => {
 		this.f('LEG PRESS');
-		this._menu2.hide();
+		// this._menu2.hide();
 	};
 
 	shoulder_press = () => {
@@ -263,8 +263,8 @@ class Setup extends Component {
 									</TouchableOpacity>
 								}
 							>
-								<MenuItem onPress={this.leg_squat}>Squat</MenuItem>
-								<MenuItem onPress={this.leg_legpress}>Leg Press</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.leg_squat}>Squat</MenuItem>
+								<MenuItem underlayColor="red" onPress={this.leg_legpress}>Leg Press</MenuItem>
 								<MenuItem onPress={this.leg_raise}>Leg Raise</MenuItem>
 								<MenuItem onPress={this.chest_bench}>Bench Press</MenuItem>
 								<MenuItem onPress={this.chest_fly}>Chest Fly</MenuItem>
