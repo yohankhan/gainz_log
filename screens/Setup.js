@@ -13,7 +13,8 @@ class Setup extends Component {
 		this.state = {
 			day: '',
 			body_part: 'Add Body Part',
-			arr: []
+			arr: [],
+			color:"black"
 		};
 	}
 
@@ -126,7 +127,9 @@ class Setup extends Component {
 
 	leg_squat = () => {
 		this.f('SQUAT');
-
+		this.setState({
+			color:"blue"
+		})
 		// this._menu2.hide();
 	};
 
@@ -263,21 +266,43 @@ class Setup extends Component {
 									</TouchableOpacity>
 								}
 							>
-								<MenuItem underlayColor="red" onPress={this.leg_squat}>
-									Squat
+								<MenuItem onPress={this.leg_squat}>
+									<Text style={styles.font}>SQUAT</Text>
 								</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.leg_legpress}>
-									Leg Press
+								<MenuItem onPress={this.leg_legpress}>
+									<Text style={styles.font}>LEG PRESS</Text>
 								</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.leg_raise}>Leg Raise</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.chest_bench}>Bench Press</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.chest_fly}>Chest Fly</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.tri_push}>Tricep Pushdown</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.back_deadlift}>Deadlift</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.back_barpull}>Lat_Bar_Pull</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.bicep_curl}>Bicep_Curls</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.shoulder_press}>Shoulder_Press</MenuItem>
-								<MenuItem underlayColor="red" onPress={this.shoulder_raise}>Shoulder_Raise</MenuItem>
+								<MenuItem onPress={this.leg_raise}>
+									<Text style={styles.font}>LEG RAISE</Text>
+								</MenuItem>
+								<MenuItem onPress={this.chest_bench}>
+									<Text style={styles.font}>BENCH PRESS</Text>
+								</MenuItem>
+								<MenuItem onPress={this.chest_fly}>
+									<Text style={styles.font}>CHEST FLY</Text>
+								</MenuItem>
+								<MenuItem onPress={this.tri_push}>
+									<Text style={styles.font}>TRICEP PUSHDOWN</Text>
+								</MenuItem>
+								<MenuItem onPress={this.back_deadlift}>
+									<Text style={styles.font}>DEADLIFT</Text>
+								</MenuItem>
+								<MenuItem onPress={this.back_barpull}>
+									{' '}
+									<Text style={styles.font}>BARPULL</Text>
+								</MenuItem>
+								<MenuItem onPress={this.bicep_curl}>
+									{' '}
+									<Text style={styles.font}>BICEP CURLS</Text>
+								</MenuItem>
+								<MenuItem onPress={this.shoulder_press}>
+									{' '}
+									<Text style={styles.font}>SHOULDER PRESS</Text>
+								</MenuItem>
+								<MenuItem onPress={this.shoulder_raise}>
+									{' '}
+									<Text style={styles.font}>SIDE RAISE</Text>
+								</MenuItem>
 							</Menu>
 						</View>
 					</View>
@@ -324,5 +349,9 @@ const styles = StyleSheet.create({
 		width: 200,
 		height: 50,
 		borderRadius: 5
+	},
+	font:{
+		fontSize:12,
+		color:"black"
 	}
 });
