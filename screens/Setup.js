@@ -3,7 +3,9 @@ import { View, Text, ImageBackground, StyleSheet, TouchableOpacity, Dimensions, 
 import Modal from 'react-native-modalbox';
 import Menu, { MenuItem } from 'react-native-material-menu';
 
+ 
 import bg from '../assets/bg2.png';
+import db from './settings/config';
 
 var screensize = Dimensions.get('window');
 
@@ -14,7 +16,7 @@ class Setup extends Component {
 			day: '',
 			body_part: 'Add Body Part',
 			arr: [],
-			color:"black"
+			menu_color: 'white'
 		};
 	}
 
@@ -70,9 +72,11 @@ class Setup extends Component {
 
 	chest = () => {
 		this.setState({
-			body_part: 'chest'
+			body_part: 'chest',
+			menu_item_bool: 'red'
 		});
-		this._menu.hide();
+
+		// this._menu.hide();
 	};
 	back = () => {
 		this.setState({
@@ -127,9 +131,7 @@ class Setup extends Component {
 
 	leg_squat = () => {
 		this.f('SQUAT');
-		this.setState({
-			color:"blue"
-		})
+
 		// this._menu2.hide();
 	};
 
@@ -168,7 +170,8 @@ class Setup extends Component {
 		var c = this.state.arr;
 		c.push(x);
 		this.setState({
-			arr: c
+			arr: c,
+			menu_color:"blue"
 		});
 	};
 
@@ -251,6 +254,7 @@ class Setup extends Component {
 							<MenuItem onPress={this.chest}>CHEST</MenuItem>
 							<MenuItem onPress={this.back}>BACK</MenuItem>
 							<MenuItem onPress={this.arms}>ARMS</MenuItem>
+
 							<MenuItem onPress={this.leg}>LEGS</MenuItem>
 							<MenuItem onPress={this.shoulders}>SHOULDERS</MenuItem>
 							<MenuItem onPress={this.pull}>BACK AND BICEPS</MenuItem>
@@ -266,40 +270,55 @@ class Setup extends Component {
 									</TouchableOpacity>
 								}
 							>
-								<MenuItem onPress={this.leg_squat}>
+								<MenuItem onPress={this.leg_squat} style={{ backgroundColor: this.state.menu_color }}>
 									<Text style={styles.font}>SQUAT</Text>
 								</MenuItem>
-								<MenuItem onPress={this.leg_legpress}>
+								<MenuItem
+									onPress={this.leg_legpress}
+									style={{ backgroundColor: this.state.menu_color }}
+								>
 									<Text style={styles.font}>LEG PRESS</Text>
 								</MenuItem>
-								<MenuItem onPress={this.leg_raise}>
+								<MenuItem onPress={this.leg_raise} style={{ backgroundColor: this.state.menu_color }}>
 									<Text style={styles.font}>LEG RAISE</Text>
 								</MenuItem>
-								<MenuItem onPress={this.chest_bench}>
+								<MenuItem onPress={this.chest_bench} style={{ backgroundColor: this.state.menu_color }}>
 									<Text style={styles.font}>BENCH PRESS</Text>
 								</MenuItem>
-								<MenuItem onPress={this.chest_fly}>
+								<MenuItem onPress={this.chest_fly} style={{ backgroundColor: this.state.menu_color }}>
 									<Text style={styles.font}>CHEST FLY</Text>
 								</MenuItem>
-								<MenuItem onPress={this.tri_push}>
+								<MenuItem onPress={this.tri_push} style={{ backgroundColor: this.state.menu_color }}>
 									<Text style={styles.font}>TRICEP PUSHDOWN</Text>
 								</MenuItem>
-								<MenuItem onPress={this.back_deadlift}>
+								<MenuItem
+									onPress={this.back_deadlift}
+									style={{ backgroundColor: this.state.menu_color }}
+								>
 									<Text style={styles.font}>DEADLIFT</Text>
 								</MenuItem>
-								<MenuItem onPress={this.back_barpull}>
+								<MenuItem
+									onPress={this.back_barpull}
+									style={{ backgroundColor: this.state.menu_color }}
+								>
 									{' '}
 									<Text style={styles.font}>BARPULL</Text>
 								</MenuItem>
-								<MenuItem onPress={this.bicep_curl}>
+								<MenuItem onPress={this.bicep_curl} style={{ backgroundColor: this.state.menu_color }}>
 									{' '}
 									<Text style={styles.font}>BICEP CURLS</Text>
 								</MenuItem>
-								<MenuItem onPress={this.shoulder_press}>
+								<MenuItem
+									onPress={this.shoulder_press}
+									style={{ backgroundColor: this.state.menu_color }}
+								>
 									{' '}
 									<Text style={styles.font}>SHOULDER PRESS</Text>
 								</MenuItem>
-								<MenuItem onPress={this.shoulder_raise}>
+								<MenuItem
+									onPress={this.shoulder_raise}
+									style={{ backgroundColor: this.state.menu_color }}
+								>
 									{' '}
 									<Text style={styles.font}>SIDE RAISE</Text>
 								</MenuItem>
@@ -350,8 +369,7 @@ const styles = StyleSheet.create({
 		height: 50,
 		borderRadius: 5
 	},
-	font:{
-		fontSize:12,
-		color:"black"
+	font: {
+		fontSize: 12
 	}
 });
