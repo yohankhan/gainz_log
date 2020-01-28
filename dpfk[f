@@ -1,0 +1,71 @@
+[33mcommit 2f4a4057cdd6d0d736346c9c7557257a80311166[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: yohan <yohank786@gmail.com>
+Date:   Tue Jan 28 20:04:43 2020 +0530
+
+    misc -frontend-
+
+[33mcommit df11736211ad04c7576e64090542ece2d35174ca[m
+Author: yohan <yohank786@gmail.com>
+Date:   Fri Jan 17 16:21:48 2020 +0530
+
+    menu-item-configs_(misc)
+
+[33mcommit b3fb836c690f2bd7fc435acacacf6fce190fd3d8[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: yohan <yohank786@gmail.com>
+Date:   Fri Jan 17 14:53:29 2020 +0530
+
+    menu_item_ui_all_change
+
+[33mcommit 09bef3fcb1109a2d5c8891db0315102bc057a4a6[m
+Author: yohan <yohank786@gmail.com>
+Date:   Fri Jan 17 14:35:45 2020 +0530
+
+    menu_items_ui
+
+[33mcommit 1c9e22807caba6d56f5207816b2fbbddafd69083[m
+Author: yohan <yohank786@gmail.com>
+Date:   Thu Jan 16 16:28:34 2020 +0530
+
+    backend
+
+[33mcommit 265eb3d89f2542665329651aa584ec455c91a4b1[m
+Author: yohan <yohank786@gmail.com>
+Date:   Mon Jan 13 11:50:22 2020 +0530
+
+    setup page backend
+
+[33mcommit fb42ce13fb5d3502acfeadcc7eb9979e08d11ee3[m
+Author: yohan <yohank786@gmail.com>
+Date:   Sun Jan 12 18:30:32 2020 +0530
+
+    frontend edit-3
+
+[33mcommit 45a093a8d0ef27a36bc8ffcb33bcc7650440b0b8[m
+Author: yohan <yohank786@gmail.com>
+Date:   Sun Jan 12 18:20:36 2020 +0530
+
+    frontend edit-2
+
+[33mcommit fedf5797b8d1054579b973609725585b2f0074f1[m
+Author: yohan <yohank786@gmail.com>
+Date:   Sun Jan 12 17:48:11 2020 +0530
+
+    setup frontend
+
+[33mcommit 036ef26c0b276f2e26625e2a2bf3b07466b1eb78[m
+Author: yohan <yohank786@gmail.com>
+Date:   Sat Jan 11 13:13:15 2020 +0530
+
+    navigation setup
+
+[33mcommit b1ee5e797e3d3d691deaa805f86d64a0552424d6[m
+Author: yohan <yohank786@gmail.com>
+Date:   Sat Jan 11 12:47:47 2020 +0530
+
+    assests config
+
+[33mcommit 83c0b361f902d120d58f158aef14770c07c5eef6[m
+Author: yohan <yohank786@gmail.com>
+Date:   Sat Jan 11 12:44:32 2020 +0530
+
+    first commit
