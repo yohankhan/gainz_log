@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, ImageBackground, StyleSheet, TouchableOpacity, Dimensions, Button } from 'react-native';
 import Modal from 'react-native-modalbox';
 import Menu, { MenuItem } from 'react-native-material-menu';
+import Firebase from 'firebase';
 
- 
 import bg from '../assets/bg2.png';
-import db from './settings/config';
+import { db } from './settings/config';
 
 var screensize = Dimensions.get('window');
 
@@ -23,6 +23,7 @@ class Setup extends Component {
 	m_function = () => {
 		this.setState({
 			day: 'Monday'
+	
 		});
 		this.refs.modal1.open();
 	};
@@ -171,8 +172,26 @@ class Setup extends Component {
 		c.push(x);
 		this.setState({
 			arr: c,
-			menu_color:"blue"
+			menu_color: 'silver'
 		});
+	};
+
+	add_data = (data) => {
+		let day = this.state.day + '/';
+		let part = this.state.body_part + '/';
+
+		db.ref('User' + '/' + day + part).set({
+			U_DATA: data
+		});
+	};
+
+	data_b_entry = () => {
+		console.log(this.state.day, this.state.body_part, this.state.arr);
+		this.add_data(this.state.arr);
+		this.setState({
+			arr:[]
+		});
+
 	};
 
 	render() {
@@ -192,11 +211,11 @@ class Setup extends Component {
 						GAINZ
 					</Text>
 				</View>
-				<View style={{ marginVertical: 6 }}>
+				<View style={{ marginTop: 5 }}>
 					<Text style={styles.text}>Setup Page</Text>
 				</View>
 
-				<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 30 }}>
+				<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginTop: 1 }}>
 					<View style={{ flex: 1, flexDirection: 'column' }}>
 						<View style={{ flexDirection: 'row' }}>
 							<TouchableOpacity style={styles.card} onPress={this.m_function}>
@@ -225,6 +244,7 @@ class Setup extends Component {
 							</TouchableOpacity>
 						</View>
 					</View>
+				
 				</View>
 				<Modal
 					ref={'modal1'}
@@ -325,15 +345,16 @@ class Setup extends Component {
 							</Menu>
 						</View>
 					</View>
-					<Button title="add" onPress={this.fun} />
+					<Button title="add" onPress={this.data_b_entry} />
 					<Button
 						title="debug"
 						onPress={() => {
 							console.log(this.state.day, this.state.body_part, this.state.arr);
-							// clear the array
 						}}
 					/>
 				</Modal>
+				{/* <TouchableOpacity style={{color:"black",width:20,height:20,elevation:20}} onPress={()=>console.log("OK")}/> */}
+				<Button title="GO" onPress={()=>{console.log("GO")}}/>
 			</ImageBackground>
 		);
 	}

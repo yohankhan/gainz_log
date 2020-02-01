@@ -1,5 +1,5 @@
 import Firebase from 'firebase';
-var firebaseConfig = {
+var Config = {
 	apiKey: 'AIzaSyCh7TStjV7P78Et14Id4N9npjQzGmmScXM',
 	authDomain: 'app3-75880.firebaseapp.com',
 	databaseURL: 'https://app3-75880.firebaseio.com',
@@ -10,14 +10,7 @@ var firebaseConfig = {
 	measurementId: 'G-V7052Z0012'
 };
 
-let app = Firebase.initializeApp(firebaseConfig);
+let app = Firebase.initializeApp(Config);
 
 export const db = app.database();
 
-// database upload scheme ??????
-
-// upload = (data) => {
-// 	db.ref('users/'+user.uid+'/').set({
-// 		data
-// 	})
-// }
