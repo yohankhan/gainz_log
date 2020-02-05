@@ -6,6 +6,8 @@ import Firebase from 'firebase';
 
 import bg from '../assets/bg2.png';
 import { db } from './settings/config';
+import { objectOf } from 'prop-types';
+import { object } from '@hapi/joi';
 
 var screensize = Dimensions.get('window');
 
@@ -20,12 +22,37 @@ class Setup extends Component {
 		};
 	}
 
+	adder = (bool, the_day) => {
+		db.ref('User/' + 'Config/' + the_day).push({
+			C_DATA: bool
+		});
+	};
+
+	checker = (da2) => {
+		db.ref('User/' + 'Config/' + da2).once('value', (snapshot) => {
+			// let v = Object.values(snapshot.val());
+			// console.log(v);
+			// console.log(snapshot.val());
+			let v = snapshot.val();
+			return v;
+		});
+	};
+
 	m_function = () => {
 		this.setState({
 			day: 'Monday'
-	
 		});
-		this.refs.modal1.open();
+		let day_bool = this.checker(this.state.day);
+
+		console.log(this.state.day, day_bool);
+		// console.log(day_bool);
+
+		// if (day_bool == 0) {
+		// 	this.adder(1,this.state.day);
+		// 	this.refs.modal1.open();
+		// } else {
+		// 	alert('Already Saved');
+		// }
 	};
 
 	t_function = () => {
@@ -74,10 +101,10 @@ class Setup extends Component {
 	chest = () => {
 		this.setState({
 			body_part: 'chest',
-			menu_item_bool: 'red'
+			menu_item_bool: 'white'
 		});
 
-		// this._menu.hide();
+		this._menu.hide();
 	};
 	back = () => {
 		this.setState({
@@ -176,6 +203,18 @@ class Setup extends Component {
 		});
 	};
 
+	// DEBUGGER
+	// debugger = () => {
+	// 	this.setState({
+	// 		day: 'Monday'
+	// 	});
+	// 	this.checker(this.state.day);
+	// 	this.setter(this.state.day);
+	// 	this.checker(this.state.day);
+	// 	this.checker('Monday');
+	// 	this.checker('Tuesday');
+	// };
+
 	add_data = (data) => {
 		let day = this.state.day + '/';
 		let part = this.state.body_part + '/';
@@ -186,12 +225,11 @@ class Setup extends Component {
 	};
 
 	data_b_entry = () => {
-		console.log(this.state.day, this.state.body_part, this.state.arr);
+		console.log('DEBUGGER', this.state.day, this.state.body_part, this.state.arr);
 		this.add_data(this.state.arr);
 		this.setState({
-			arr:[]
+			arr: []
 		});
-
 	};
 
 	render() {
@@ -244,7 +282,6 @@ class Setup extends Component {
 							</TouchableOpacity>
 						</View>
 					</View>
-				
 				</View>
 				<Modal
 					ref={'modal1'}
@@ -346,15 +383,18 @@ class Setup extends Component {
 						</View>
 					</View>
 					<Button title="add" onPress={this.data_b_entry} />
-					<Button
-						title="debug"
-						onPress={() => {
+					<Button title="debug" onPress={this.debugger} />
+					{/* () => {
 							console.log(this.state.day, this.state.body_part, this.state.arr);
-						}}
-					/>
+						} */}
 				</Modal>
 				{/* <TouchableOpacity style={{color:"black",width:20,height:20,elevation:20}} onPress={()=>console.log("OK")}/> */}
-				<Button title="GO" onPress={()=>{console.log("GO")}}/>
+				<Button
+					title="GO"
+					onPress={() => {
+						console.log('GO');
+					}}
+				/>
 			</ImageBackground>
 		);
 	}
